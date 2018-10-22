@@ -1,0 +1,33 @@
+[user]
+    email = carlos.zubieta@wizeline.com
+    name = zubieta
+[alias]
+    br = branch
+    bra = branch -a
+    ci = commit
+    cm = commit -m
+    co = checkout
+    diffstat = diff --stat
+    last = log -1 HEAD
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    ls = ls-files
+    st = status
+    stashdiff = stash show -p
+    track = branch -u
+    unstage = reset HEAD --
+    unstash = stash pop
+    upstream = "!git status -sb | grep ^## | cut -s -d. -f4"
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    process = git-lfs filter-process
+    required = true
+    smudge = git-lfs smudge -- %f
+[core]
+    editor = vim
+    excludesFile = ~/.gitignore_global
+[protocol "keybase"]
+    allow = always
+[status]
+    submodulesummary = false
+[credential "https://source.developers.google.com"]
+    helper = gcloud.sh
