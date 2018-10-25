@@ -1,0 +1,2 @@
+RAW_RESERVED
+COMMAND open -a Firefox %s
