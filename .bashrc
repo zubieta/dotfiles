@@ -142,6 +142,9 @@ fi
 ## Keychain
 eval $(keychain --eval --quiet)
 
+## JIRA
+eval "$(jira --completion-script-bash)"
+
 ## Google cloud
 if [ -f /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc ]; then
     . /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc

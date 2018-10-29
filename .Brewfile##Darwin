@@ -58,6 +58,7 @@ brew "git-lfs"
 brew "glances"
 brew "glyr"
 brew "gnupg"
+brew "go-jira"
 brew "grip"
 brew "gst-plugins-bad", args: ["with-faad2", "with-libmms", "with-opus"]
 brew "gst-plugins-base", args: ["with-libogg", "with-libvorbis", "with-opus", "with-theora"]
