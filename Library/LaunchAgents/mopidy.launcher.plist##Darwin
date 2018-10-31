@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+   "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>EnvironmentVariables</key>
+        <dict>
+            <key>LC_ALL</key>
+            <string>en_US.UTF-8</string>
+            <key>LANG</key>
+            <string>en_US.UTF-8</string>
+        </dict>
+        <key>Label</key>
+        <string>mopidy.launcher</string>
+        <key>ProgramArguments</key>
+        <array>
+            <string>sh</string>
+            <string>-c</string>
+            <string>PATH=&quot;/usr/local/bin:$PATH&quot;
+            mopidy 2&gt;&amp;1 | ts</string>
+        </array>
+        <key>RunAtLoad</key>
+        <true />
+        <key>KeepAlive</key>
+        <true />
+        <key>StandardOutPath</key>
+        <string>/Users/czr/.local/var/log/mopidy.log</string>
+    </dict>
+</plist>
