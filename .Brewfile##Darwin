@@ -112,7 +112,7 @@ brew "vit"
 brew "vnstat"
 brew "w3m"
 brew "watch"
-brew "weechat"
+brew "weechat", args: ["with-python@2", "with-perl"]
 brew "wget"
 brew "yadm"
 brew "zbar"
