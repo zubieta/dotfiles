@@ -90,7 +90,8 @@ alias unbackup='function __unbackup() { mv -i $1 ${1%.bak}; }; __unbackup'
 alias unbak='unbackup'
 alias urldecode='function __urldecode() { local url_encoded="${1//+/ }"; printf '"'%b'"' "${url_encoded//%/\\x}"; }; __urldecode'
 alias urlencode='function __urlencode() { local LANG=C i c e=""; for ((i=0;i<${#1};i++)); do c=${1:$i:1}; [[ "$c" =~ [a-zA-Z0-9\.\~\_\-] ]] || printf -v c '"'%%%02X'"' "'"'"'$c"; e+="$c"; done; echo "$e"; }; __urlencode'
-alias vi='vim'
+alias vi='nvim'
+alias vim='nvim'
 alias wifipass='function __wifipass() { security find-generic-password -ga "$1" | grep "password:"; }; __wifipass'
 alias worm2clip='wormhole receive | tee >(cut -d" " -f5- | pbcopy)'
 alias ws='cd ${WORKSPACE_HOME}'
@@ -110,7 +111,7 @@ export LANG=en_US.UTF-8
 export LESSOPEN='|$(which lesspipe.sh) %s'
 export LESS_ADVANCED_PREPROCESSOR=1
 
-export EDITOR='vim'
+export EDITOR='nvim'
 # export BROWSER='firefox'
 
 ## brew sqlite3
