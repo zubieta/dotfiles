@@ -76,6 +76,7 @@ brew "launchctl-completion"
 brew "lesspipe"
 brew "lnav"
 brew "magic-wormhole"
+brew "moreutils", args: ["without-parallel"]
 brew "mps-youtube"
 brew "mpv"
 brew "ncmpcpp"
