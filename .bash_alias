@@ -1,0 +1,44 @@
+#!/bin/bash -xe
+
+## Aliases
+alias bak='backup'
+alias c=clear
+alias calc='bc -l <<<'
+alias clip2worm='pbpaste | wormhole send --text -'
+alias dots='yadm'
+alias exterminate_ds_store='find ~/ -d -maxdepth 100 -name ".DS_Store" -type f -print -delete'
+alias k='kubectl'
+alias kns='kubectl config set-context `kubectl config current-context` --namespace'
+alias l='ls -FG'
+alias la='ls -aG'
+alias ll='ls -lG'
+alias ls='ls -FG'
+alias lyrics='lyvi'
+alias mf='mkdir -p'
+alias music='ncmpcpp'
+alias myip="wget -q -O - checkip.dyndns.org|sed -e 's/.*Current IP Address: //' -e 's/<.*$//'"
+alias nipgen='pwgen -A -s -r abcdefghijklmnopqrstuvwxyz'
+alias q=exit
+alias rf='rm -rf'
+alias sha1sum='shasum'
+alias sha256sum='shasum -a 256'
+alias sl='ls'
+alias suspend='pmset sleepnow'
+alias sysinfo='screenfetch 2>/dev/null'
+alias systop='glances'
+alias t='task'
+alias tldr='tldr -p osx'
+alias unbak='unbackup'
+alias vi='nvim'
+alias vim='nvim'
+alias worm2clip='wormhole receive | tee >(cut -d" " -f5- | pbcopy)'
+alias ws='cd ${WORKSPACE_HOME}'
+alias yt='mpsyt'
+
+# shellcheck disable=SC2142
+alias lskites="ps aux | awk '/pagekite/ && !/awk/ {print \$2\\t\$1\\t\$NF}'"
+
+## Completion for aliases
+complete -o bashdefault -o default -F _yadm dots
+complete -o nospace -F _task t
+complete -o default -F __start_kubectl k
