@@ -67,7 +67,7 @@ brew "gst-plugins-ugly", args: ["with-flac", "with-lame", "with-libmms", "with-l
 brew "gst-python", args: ["without-python", "with-python@2"]
 brew "html2text"
 brew "htop"
-brew "imagemagick"
+brew "imagemagick", args: ["with-librsvg"]
 brew "jq"
 brew "keychain"
 brew "khal"
