@@ -112,9 +112,9 @@ PATH="$HOME/.local/bin:$PATH"
 VIRTUALENVWRAPPER_PYTHON="$(command -v python2)"
 export VIRTUALENVWRAPPER_PYTHON
 export WORKON_HOME=~/.virtualenvs
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+if [ -f /usr/local/bin/virtualenvwrapper_lazy.sh ]; then
     # shellcheck source=/dev/null
-    source /usr/local/bin/virtualenvwrapper.sh
+    source /usr/local/bin/virtualenvwrapper_lazy.sh
 fi
 # Nimble
 if [ -n "$(command -v nimble)" ]; then
