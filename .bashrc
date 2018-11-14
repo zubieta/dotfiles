@@ -102,6 +102,8 @@ fi
 if [[ "$OSTYPE" == darwin* ]]; then
     # SQLite
     PATH="/usr/local/opt/sqlite/bin:$PATH"
+    # Logrotate is installed in sbin
+    PATH="/usr/local/sbin:$PATH"
 fi
 # Projects folder
 export WORKSPACE_HOME="$HOME/projects"
