@@ -132,9 +132,13 @@ export PASSWORD_STORE_EXTENSIONS_DIR="$HOME/.local/lib/password-store/extensions
 export PASSWORD_STORE_GENERATED_LENGTH=15
 # Brew
 export HOMEBREW_NO_ANALYTICS=1
-## Direnv
+# Direnv
 if [ -n "$(command -v direnv)" ]; then
     eval "$(direnv hook bash)"
+fi
+# Fuck
+if [ -n "$(command -v thefuck)" ]; then
+    eval "$(thefuck --alias fix)"
 fi
 
 # ## Dedup path
