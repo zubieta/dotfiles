@@ -102,6 +102,8 @@ fi
 if [[ "$OSTYPE" == darwin* ]]; then
     # SQLite
     PATH="/usr/local/opt/sqlite/bin:$PATH"
+    # Python3
+    PATH="/usr/local/opt/python/libexec/bin:$PATH"
     # Logrotate is installed in sbin
     PATH="/usr/local/sbin:$PATH"
 fi
