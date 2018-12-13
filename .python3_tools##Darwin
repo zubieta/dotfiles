@@ -1,0 +1,29 @@
+# Python package management tools
+pip
+setuptools
+wheel
+# Development tools
+bugwarrior[jira,keyring]
+git-spindle
+jedi
+pylint
+pycodestyle
+pydocstyle
+mypy
+black
+ipython
+vim-vint
+tmuxp
+kaggle
+cmakelint
+# Lyvi's requirements
+cython
+psutil
+urwid
+plyr
+# Media keys
+osxmpdkeys
+# Lifecalendar
+pillow
+# Neovim
+neovim

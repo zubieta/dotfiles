@@ -1,0 +1,11 @@
+# Python package management tools
+pip
+setuptools
+wheel
+# Music
+Mopidy-GMusic
+Mopidy-Podcast
+# Neovim
+neovim
+# Weechat wee-slack
+websocket_client
