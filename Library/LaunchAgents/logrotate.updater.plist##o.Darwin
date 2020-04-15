@@ -5,25 +5,21 @@
     <dict>
         <key>EnvironmentVariables</key>
         <dict>
-            <key>LANG</key>
-            <string>en_US.UTF-8</string>
             <key>LC_ALL</key>
+            <string>en_US.UTF-8</string>
+            <key>LANG</key>
             <string>en_US.UTF-8</string>
         </dict>
         <key>Label</key>
-        <string>vdirsyncer.updater</string>
+        <string>logrotate.updater</string>
         <key>ProgramArguments</key>
         <array>
-            <string>sh</string>
-            <string>-c</string>
-            <string>PATH=&quot;/usr/local/bin:$PATH&quot;
-            vdirsyncer sync 2&gt;&amp;1 | ts</string>
+            <string>/usr/local/sbin/logrotate</string>
+            <string>/usr/local/etc/logrotate.conf</string>
         </array>
         <key>RunAtLoad</key>
         <true />
         <key>StartInterval</key>
-        <integer>120</integer>
-        <key>StandardOutPath</key>
-        <string>/Users/czr/.local/var/log/vdirsyncer.log</string>
+        <integer>7200</integer>
     </dict>
 </plist>

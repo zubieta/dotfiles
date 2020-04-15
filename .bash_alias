@@ -1,12 +1,16 @@
 #!/bin/bash -xe
 
 ## Aliases
+alias agenda='gcalcli --refresh --cal carlos.zubieta@wizeline.com#blue --cal "Holidays in United States"#green --cal "Holidays in Mexico"#magenta agenda --details location --details length --nodeclined $(date +%F) $(date -v+1d +%F)'
+alias b='cd ${OLDPWD}'
 alias bak='backup'
 alias c=clear
 alias calc='bc -l <<<'
 alias clip2worm='pbpaste | wormhole send --text -'
 alias dots='yadm'
 alias exterminate_ds_store='find ~/ -d -maxdepth 100 -name ".DS_Store" -type f -print -delete'
+alias f='fuck'
+alias fix='fuck'
 alias k='kubectl'
 alias kns='kubectl config set-context `kubectl config current-context` --namespace'
 alias l='ls -FG'
@@ -14,10 +18,12 @@ alias la='ls -aG'
 alias ll='ls -lG'
 alias ls='ls -FG'
 alias lyrics='lyvi'
+alias meeting='gcalcli --refresh --cal carlos.zubieta@wizeline.com#blue agenda --nostarted --nodeclined --details location --details url --details length --details description $(date +%F) $(date -v+1d +%F) | sed -E "s/^[^[:alnum:]].*[[:space:]]*.*[0-9]+:[0-9][0-9][ap]m.*$//g" | awk -v RS= "{print; exit}"'
 alias mf='mkdir -p'
 alias music='ncmpcpp'
 alias myip="wget -q -O - checkip.dyndns.org|sed -e 's/.*Current IP Address: //' -e 's/<.*$//'"
 alias nipgen='pwgen -A -s -r abcdefghijklmnopqrstuvwxyz'
+alias query=/usr/local/bin/q
 alias q=exit
 alias rf='rm -rf'
 alias sha1sum='shasum'
@@ -30,6 +36,7 @@ alias t='task'
 alias tldr='tldr -p osx'
 alias unbak='unbackup'
 alias vi='nvim'
+alias view='nvim -R'
 alias vim='nvim'
 alias worm2clip='wormhole receive | tee >(cut -d" " -f5- | pbcopy)'
 alias ws='cd ${WORKSPACE_HOME}'

@@ -2,9 +2,12 @@
 pip
 setuptools
 wheel
+virtualenv
 # Development tools
 bugwarrior[jira,keyring]
+v1pysdk
 git-spindle
+isort
 jedi
 pylint
 pycodestyle
@@ -12,8 +15,8 @@ pydocstyle
 mypy
 black
 ipython
+vulture
 vim-vint
-tmuxp
 kaggle
 cmakelint
 # Lyvi's requirements
@@ -26,4 +29,14 @@ osxmpdkeys
 # Lifecalendar
 pillow
 # Neovim
-neovim
+pynvim
+# Other tools
+gcalcli
+tmuxp
+# Music
+mopidy
+mopidy-mpd
+mopidy-gmusic
+#mopidy-podcast
+# Weechat wee-slack
+websocket-client

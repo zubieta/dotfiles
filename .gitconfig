@@ -17,6 +17,7 @@
     unstage = reset HEAD --
     unstash = stash pop
     upstream = "!git status -sb | grep ^## | cut -s -d. -f4"
+    fire = "!export TIME=$(date +%Y%m%dT%H%M%S); export HOST=$(hostname); git checkout -b fire-branch-$USER-$HOST-$TIME && git add --all && git commit -m \"Have to run\" && git push -u origin fire-branch-$USER-$HOST-$TIME"
 [filter "lfs"]
     clean = git-lfs clean -- %f
     process = git-lfs filter-process
@@ -32,6 +33,6 @@
 [credential "https://source.developers.google.com"]
     helper = gcloud.sh
 [diff]
-	tool = vimdiff
+    tool = vimdiff
 [merge]
-	tool = vimdiff
+    tool = vimdiff

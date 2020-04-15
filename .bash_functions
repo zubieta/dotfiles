@@ -69,3 +69,59 @@ function svg2icns() {
         return 1
     fi
 }
+
+function aws-profile() {
+    if [ $# -gt 1 ] || [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
+        echo "Usage: aws-profile <PROFILE>"
+        echo
+        echo "If no PROFILE is given then list the available profiles, otherwise"
+        echo "set the AWS_PROFILE environment variable to it."
+    elif [ $# -eq 0 ]; then
+        grep '\[*\]' ~/.aws/credentials | cut -d '[' -f2 | cut -d ']' -f1
+    else
+        export AWS_PROFILE="$1"
+    fi
+}
+
+function _aws_profiles() {
+    local cur prev opts profiles
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD - 1]}"
+    profiles=$(grep '\[*\]' ~/.aws/credentials | cut -d '[' -f2 | cut -d ']' -f1)
+    opts="-h --help $profiles"
+
+    if [[ $prev == "aws-profile" ]]; then
+        # shellcheck disable=SC2207
+        COMPREPLY=($(compgen -W "$opts" -- "$cur"))
+        return 0
+    fi
+}
+complete -F _aws_profiles aws-profile
+
+# Connect to a rpi cluster node
+# function fellow() {
+#     if [ $# -eq 0 ] || [ $# -gt 1 ] || [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
+#         echo "Usage: fellow <node name>"
+#         echo
+#         echo "SSH to a rpi cluster node (fellow)."
+#         echo "The available nodes are frodo, sam, merry and pippin"
+#     else
+#         ssh root@"$1".local -p22222
+#     fi
+# }
+
+# function _fellows() {
+#     local cur prev opts
+#     COMPREPLY=()
+#     cur="${COMP_WORDS[COMP_CWORD]}"
+#     prev="${COMP_WORDS[COMP_CWORD - 1]}"
+#     opts="-h --help frodo sam merry pippin"
+
+#     if [[ ${prev} == "fellow" ]]; then
+#         # shellcheck disable=SC2207
+#         COMPREPLY=($(compgen -W "$opts" -- "$cur"))
+#         return 0
+#     fi
+# }
+# complete -F _fellows fellow
