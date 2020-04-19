@@ -3,8 +3,8 @@
 !/.config/mr
 !/.config/mr/available.d
 !/.config/mr/available.d/*
+!/.config/mr/enabled.d
+!/.config/mr/enabled.d/mr.vcsh
 !/.gitignore.d
 !/.gitignore.d/mr
 !/.mrconfig
-/.config/mr/enabled.d
-/.config/mr/enabled.d/*
