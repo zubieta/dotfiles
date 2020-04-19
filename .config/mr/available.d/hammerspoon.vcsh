@@ -1,0 +1,2 @@
+[$HOME/.config/vcsh/repo.d/hammerspoon.git]
+checkout = vcsh clone --branch hammerspoon --single-branch git@github.com:zubieta/dotfiles.git hammerspoon
