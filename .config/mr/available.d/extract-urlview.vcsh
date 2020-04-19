@@ -1,0 +1,2 @@
+[$HOME/.config/vcsh/repo.d/extract-urlview.git]
+checkout = vcsh clone --branch extract-urlview --single-branch git@github.com:zubieta/dotfiles.git extract-urlview
