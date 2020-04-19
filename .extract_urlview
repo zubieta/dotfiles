@@ -1,0 +1,2 @@
+RAW_RESERVED
+COMMAND [ `command -v open` ] && open -a Firefox %s || xdg-open %s
