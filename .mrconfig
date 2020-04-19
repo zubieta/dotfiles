@@ -1,0 +1,3 @@
+[DEFAULT]
+jobs = 5
+include = cat ~/.config/mr/enabled.d/*
