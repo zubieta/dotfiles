@@ -1,2 +1,3 @@
 [$HOME/.config/vcsh/repo.d/git.git]
+order = 1
 checkout = vcsh clone --branch git --single-branch git@github.com:zubieta/dotfiles.git git
