@@ -1,0 +1,2 @@
+[$HOME/.config/vcsh/repo.d/iterm2.git]
+checkout = vcsh clone --branch iterm2 --single-branch git@github.com:zubieta/dotfiles.git iterm2
