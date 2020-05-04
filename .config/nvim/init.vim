@@ -290,5 +290,9 @@ let g:tmuxline_theme = {
       \ 'cpane' : [ 190, 190, 'none' ],
       \}
 
+" Load plugin settings
+for s:fpath in split(globpath('~/.config/nvim/settings', '*.vim'), '\n')
+  exe 'source' s:fpath
+endfor
 " Load system specific configurations
-silent! source ~/.config/nvim/init.vim.local
+silent! source ~/.config/nvim/local.vim

@@ -1,8 +1,10 @@
 *
 !/.config
 !/.config/nvim
-!/.config/nvim/ftplugin
-!/.config/nvim/ftplugin/*
+!/.config/nvim/**
 !/.config/nvim/init.vim
 !/.gitignore.d
 !/.gitignore.d/vim
+/.config/nvim/pack/minpac
+/.config/nvim/local.vim
+/.config/nvim/.*
