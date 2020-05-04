@@ -1,8 +1,9 @@
 """" General settings
 
 " Disable modelines for security reasons
-" https://github.com/numirias/security/blob/master/doc/2019-06-04_ace-vim-neovim.md
+" https://security.stackexchange.com/questions/36001/vim-modeline-vulnerabilities
 set nomodeline
+set modelines=0
 
 """ Commands
 " <Leader>
