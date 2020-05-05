@@ -5,4 +5,4 @@
 !/Library/Application Support
 !/Library/Application Support/iTerm2
 !/Library/Application Support/iTerm2/DynamicProfiles
-!/Library/Application Support/iTerm2/DynamicProfiles/profiles.json
+!/Library/Application Support/iTerm2/DynamicProfiles/**
