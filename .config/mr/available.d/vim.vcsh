@@ -1,2 +1,7 @@
 [$HOME/.config/vcsh/repo.d/vim.git]
-checkout = vcsh clone --branch vim --single-branch git@github.com:zubieta/dotfiles.git vim
+checkout = vcsh clone -b vim git@github.com:zubieta/dotfiles.git vim
+post_checkout =
+    test -f ~/.vimrc && mv -f ~/.vimrc ~/.vimrc.bak
+    test -d ~/.vim && mv -f ~/.vim ~/.vim.bak
+    ln -sf .config/nvim/init.vim ~/.vimrc
+    ln -sf .config/nvim ~/.vim
