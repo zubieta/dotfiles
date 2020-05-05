@@ -86,7 +86,6 @@ let g:loaded_node_provider = 0
 filetype plugin indent on
 
 """ Miscellaneous
-" Prompt theme from airline
 " Tmux theme from airline
 let g:tmuxline_preset = {
       \ 'a'       : '#S',
