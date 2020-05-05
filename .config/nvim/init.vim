@@ -87,11 +87,6 @@ filetype plugin indent on
 
 
 """ Plugin installation
-" Load sensible only for vim
-if has('nvim')
-  let g:loaded_sensible=0
-endif
-
 " Set the color scheme
 let g:gruvbox_contrast_dark = 'hard'
 silent! colorscheme gruvbox
