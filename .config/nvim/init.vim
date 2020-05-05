@@ -88,27 +88,6 @@ filetype plugin indent on
 
 """ Plugin installation
 "" Code linting
-let g:ale_open_list = 1
-let g:ale_list_window_size = 5
-nmap <silent> ]l <Plug>(ale_next_wrap)
-nmap <silent> [l <Plug>(ale_previous_wrap)
-" Close loclist on buffer close
-augroup ale_close_loclist
-  autocmd!
-  autocmd QuitPre * if empty(&buftype) | lclose | endif
-augroup END
-" Disable linting
-augroup disable_on_readonly
-  autocmd!
-  autocmd BufReadPost * if &readonly || !&modifiable | :ALEDisableBuffer | endif
-augroup END
-augroup enable_on_changed_ro
-  autocmd!
-  autocmd FileChangedRO * :ALEEnableBuffer
-augroup END
-
-" Completion
-let g:ale_completion_enabled = 0
 let g:deoplete#enable_at_startup = 1
 " Enable tab completion for deoplete
 function! s:check_back_space() abort
