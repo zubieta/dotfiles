@@ -3,7 +3,7 @@
 !/.gitignore.d/hammerspoon
 !/.hammerspoon
 !/.hammerspoon/Spoons
-!/.hammerspoon/Spoons/*
+!/.hammerspoon/Spoons/**
 !/.hammerspoon/assets
-!/.hammerspoon/assets/*
+!/.hammerspoon/assets/**
 !/.hammerspoon/init.lua
