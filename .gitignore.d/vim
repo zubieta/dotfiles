@@ -7,4 +7,4 @@
 !/.gitignore.d/vim
 /.config/nvim/pack/minpac
 /.config/nvim/local.vim
-/.config/nvim/.*
+/.config/nvim/**/.*
