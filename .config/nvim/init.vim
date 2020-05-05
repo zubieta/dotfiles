@@ -87,12 +87,6 @@ filetype plugin indent on
 
 
 """ Plugin installation
-" Rulers config
-let g:airline_powerline_fonts = 1
-let g:airline_theme='gruvbox'
-let g:airline#extensions#tmuxline#enabled = 0
-let g:airline#extensions#ale#enabled = 1
-
 " Indentation guidelines
 let g:indent_guides_guide_size = 1
 let g:indent_guides_enable_on_vim_startup = 1
