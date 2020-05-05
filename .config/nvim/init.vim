@@ -87,10 +87,6 @@ filetype plugin indent on
 
 
 """ Plugin installation
-" Indentation guidelines
-let g:indent_guides_guide_size = 1
-let g:indent_guides_enable_on_vim_startup = 1
-
 "" Code editing
 " Editor settings
 let g:EditorConfig_exclude_patterns = ['fugitive://.\*', 'scp://.\*']
