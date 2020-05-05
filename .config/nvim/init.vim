@@ -87,9 +87,6 @@ filetype plugin indent on
 
 
 """ Plugin installation
-"" Code editing
-" Editor settings
-let g:EditorConfig_exclude_patterns = ['fugitive://.\*', 'scp://.\*']
 " Auto-formatting
 fun! ConditionalAutoformat()
   if exists('b:no_autoformat')
