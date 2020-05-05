@@ -85,20 +85,6 @@ let g:loaded_node_provider = 0
 """ Enable filetype detection and specific plugins and indentation rules
 filetype plugin indent on
 
-
-""" Plugin installation
-"" Code linting
-let g:deoplete#enable_at_startup = 1
-" Enable tab completion for deoplete
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~? '\s'
-endfunction
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ deoplete#manual_complete()
-
 """ Miscellaneous
 " Prompt theme from airline
 " Tmux theme from airline

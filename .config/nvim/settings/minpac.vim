@@ -34,31 +34,6 @@ if exists('*minpac#init')
   " Show indentation guides
   call minpac#add('nathanaelkane/vim-indent-guides')
 
-  """ Code editing
-  " Code autoformatter
-  call minpac#add('Chiel92/vim-autoformat')
-  " Alignemnet
-  call minpac#add('godlygeek/tabular')
-  " Comment out code
-  call minpac#add('tpope/vim-commentary')
-  " Language Server Client
-  call minpac#add('w0rp/ale')
-  " Completion
-  call minpac#add('Shougo/deoplete.nvim')
-  if !has('nvim')
-    " Extra packages required to work on vim
-    call minpac#add('roxma/nvim-yarp')
-    call minpac#add('roxma/vim-hug-neovim-rpc')
-  endif
-  " Python completion
-  call minpac#add('zchee/deoplete-jedi')
-  " Cmake completion
-  " call minpac#add('richq/vim-cmake-completion')
-  " Syntax highlighting
-  call minpac#add('sheerun/vim-polyglot')
-  " Editor settings
-  call minpac#add('editorconfig/editorconfig-vim')
-
   """ Other Integrations
   " Direnv integration
   call minpac#add('direnv/direnv.vim')
@@ -73,6 +48,32 @@ if exists('*minpac#init')
   call minpac#add('edkolev/tmuxline.vim', {'type': 'opt'})
   " Killer sheep game
   call minpac#add('vim/killersheep', {'type': 'opt'})
+
+  """ Code editing
+  " Code autoformatter
+  call minpac#add('Chiel92/vim-autoformat')
+  " Alignemnet
+  call minpac#add('godlygeek/tabular')
+  " Comment out code
+  call minpac#add('tpope/vim-commentary')
+  " Language Server Client
+  call minpac#add('w0rp/ale')
+  " Syntax highlighting
+  call minpac#add('sheerun/vim-polyglot')
+  " Editor settings
+  call minpac#add('editorconfig/editorconfig-vim')
+
+  " Completion
+  call minpac#add('Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'})
+  if !has('nvim')
+    " Extra packages required to work on vim
+    call minpac#add('roxma/nvim-yarp')
+    call minpac#add('roxma/vim-hug-neovim-rpc')
+  endif
+  " Sintax based completion
+  call minpac#add('Shougo/neco-syntax')
+  " Python completion
+  call minpac#add('zchee/deoplete-jedi')
 endif
 
 """ Plugin configuration
