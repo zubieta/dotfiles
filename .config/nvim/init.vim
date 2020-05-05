@@ -87,30 +87,6 @@ filetype plugin indent on
 
 
 """ Plugin installation
-" Auto-formatting
-fun! ConditionalAutoformat()
-  if exists('b:no_autoformat')
-    return
-  endif
-  :Autoformat
-endfun
-fun! ConditionalRemoveTrailingSpaces()
-  if exists('b:no_remove_training_spaces')
-    return
-  endif
-  :RemoveTrailingSpaces
-endfun
-nnoremap <Leader>F :Autoformat<CR>
-vnoremap <Leader>F :Autoformat<CR>
-nnoremap <Leader>R :<C-u>RemoveTrailingSpaces<CR>
-vnoremap <Leader>R :RemoveTrailingSpaces<CR>
-augroup writehooks
-  autocmd!
-  autocmd BufWrite * call ConditionalAutoformat()
-  autocmd BufWritePre * call ConditionalRemoveTrailingSpaces()
-augroup END
-command! SkipWriteHooks noautocmd w
-
 "" Code linting
 let g:ale_open_list = 1
 let g:ale_list_window_size = 5
