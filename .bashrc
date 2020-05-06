@@ -38,10 +38,14 @@ export BROWSER
 export PAGER=less
 
 # Source other configuration files in lexicographical order
-if [ -d ~/.bash ]; then
-    for FILE in ~/.bash/*; do
+if [ -d ~/.bash.d ]; then
+    for FILE in ~/.bash.d/*; do
         # shellcheck source=/dev/null
-        source "$FILE"
+        [ -f "$FILE" ] && source "$FILE"
+    done
+    for FILE in ~/.bash.d/local/*; do
+        # shellcheck source=/dev/null
+        [ -f "$FILE" ] && source "$FILE"
     done
 fi
 

@@ -1,6 +1,7 @@
 *
-!/.bash
-!/.bash/**
 !/.bashrc
+!/.bash.d
+!/.bash.d/**
+/.bash.d/local
 !/.gitignore.d
 !/.gitignore.d/bash
