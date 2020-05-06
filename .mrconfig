@@ -1,4 +1,5 @@
 [DEFAULT]
-git_gc = git gc "$@"
+vcsh_gc = git -C "$MR_REPO" gc "$@"
+vcsh_details = seq -f '=' -s '' $((3 * $(tput cols) / 4)); echo; git -C "$MR_REPO" status "$@"
 jobs = 5
 include = cat ~/.config/mr/enabled.d/* || true
