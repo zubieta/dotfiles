@@ -1,0 +1,88 @@
+# Create a backup copy of the given file
+function backup() {
+    cp -R "$1" "$1.bak"
+}
+
+# Replace the original file with the backup
+function unbackup() {
+    mv -i "$1" "${1%.bak}"
+}
+
+# Define realpath function if not available
+if [ -n "$(command -v realpath)" ]; then
+    function realpath() {
+        cd "$(dirname "$@")" || echo "$(pwd)/$(basename "$@")" || return
+    }
+fi
+
+# Swap the name of two files
+function swap() {
+    local TMP
+    TMP="$(mktemp)"
+    mv "$1" "$TMP"
+    mv "$2" "$1"
+    mv "$TMP" "$2"
+}
+
+# Extract WIFI password
+function wifipass() {
+    if [ $# -ne 1 ] || [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
+        echo "Usage: wifipass <SSID>"
+        echo
+        echo "Prints the password of the network with the given SSID if known."
+    else
+        if [[ "$OSTYPE" == darwin* ]]; then
+            security find-generic-password -wa "$1"
+        else
+            echo "ERROR: Not implemented for this platform"
+            return 1
+        fi
+    fi
+}
+
+function _wifipass() {
+    local cur prev opts ssids
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD - 1]}"
+    if [[ "$OSTYPE" == darwin* ]]; then
+        ssids=$(networksetup -listpreferredwirelessnetworks en0 | tail -n+2)
+    fi
+    opts="-h --help $ssids"
+
+    if [[ $prev == "wifipass" ]]; then
+        # shellcheck disable=SC2207
+        COMPREPLY=($(compgen -W "$opts" -- "$cur"))
+        return 0
+    fi
+}
+complete -F _wifipass wifipass
+
+# shellcheck disable=SC2120
+function aws-profile() {
+    if [ $# -gt 1 ] || [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
+        echo "Usage: aws-profile <PROFILE>"
+        echo
+        echo "If no PROFILE is given then list the available profiles, otherwise"
+        echo "set the AWS_PROFILE environment variable to it."
+    elif [ $# -eq 0 ]; then
+        grep '\[*\]' ~/.aws/credentials | cut -d '[' -f2 | cut -d ']' -f1
+    else
+        export AWS_PROFILE="$1"
+    fi
+}
+
+function _aws_profiles() {
+    local cur prev opts
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD - 1]}"
+    # shellcheck disable=SC2119
+    opts="-h --help $(aws-profile)"
+    if [[ $prev == "aws-profile" ]]; then
+        # shellcheck disable=SC2207
+        COMPREPLY=($(compgen -W "$opts" -- "$cur"))
+        return 0
+    fi
+}
+complete -F _aws_profiles aws-profile
