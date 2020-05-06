@@ -1,0 +1,34 @@
+## Aliases
+alias bak='backup'
+alias c=clear
+alias calc='bc -l <<<'
+alias f='fuck'
+alias fix='fuck'
+alias k='kubectl'
+alias kns='kubectl config set-context `kubectl config current-context` --namespace'
+alias l='ls -FG'
+alias la='ls -aG'
+alias ll='ls -lG'
+alias ls='ls -FG'
+alias lyrics='lyvi'
+alias mf='mkdir -p'
+alias music='ncmpcpp'
+alias myip="wget -q -O - checkip.dyndns.org|sed -e 's/.*Current IP Address: //' -e 's/<.*$//'"
+alias nipgen='pwgen -A -s -r abcdefghijklmnopqrstuvwxyz'
+alias query=/usr/local/bin/q
+alias q=exit
+alias rf='rm -rf'
+alias sha1sum='shasum'
+alias sha256sum='shasum -a 256'
+alias sl='ls'
+alias suspend='[ "$OSTYPE" == darwin* ] && pmset sleepnow || systemctl suspend'
+alias sysinfo='screenfetch 2>/dev/null'
+alias tldr='[ "$OSTYPE" == darwin* ] && PLATFORM="osx" || PLATFORM=linux; tldr -p $PLATFORM'
+alias unbak='unbackup'
+alias vi='nvim'
+alias view='nvim -R'
+alias vim='nvim'
+alias yt='mpsyt'
+
+## Completion for aliases
+complete -o default -F __start_kubectl k
