@@ -1,5 +1,5 @@
 " Command to return the right virtual/conda env if exists
-let s:venv = '$([ -n "${VIRTUAL_ENV+set}" ] && (_TMP="${VIRTUAL_ENV##*/}" && printf "(${_TMP%%-*})") || ([ -n "${CONDA_DEFAULT_ENV+set}" ] && printf "(${CONDA_DEFAULT_ENV})"))'
+let s:venv = '$([ -n "${VIRTUAL_ENV+set}" ] && (_TMP="${VIRTUAL_ENV##*/}" && ([ -n "${PIPENV_ACTIVE+set}" ] && printf "(${_TMP%?????????})" || printf "(${_TMP})" )) || ([ -n "${CONDA_DEFAULT_ENV+set}" ] && printf "(${CONDA_DEFAULT_ENV})"))'
 
 " Load the custom preset only after promptline plugin is sourced
 " so it works with optional packages
