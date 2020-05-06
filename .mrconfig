@@ -1,3 +1,4 @@
 [DEFAULT]
+git_gc = git gc "$@"
 jobs = 5
-include = cat ~/.config/mr/enabled.d/*
+include = cat ~/.config/mr/enabled.d/* || true
