@@ -1,2 +1,2 @@
 [$HOME/.config/vcsh/repo.d/brew.git]
-checkout = vcsh clone -b brew git@github.com:zubieta/dotfiles.git brew
+checkout = vcsh clone -b brew https://github.com/zubieta/dotfiles.git brew

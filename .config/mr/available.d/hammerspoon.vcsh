@@ -1,2 +1,2 @@
 [$HOME/.config/vcsh/repo.d/hammerspoon.git]
-checkout = vcsh clone -b hammerspoon git@github.com:zubieta/dotfiles.git hammerspoon
+checkout = vcsh clone -b hammerspoon https://github.com/zubieta/dotfiles.git hammerspoon

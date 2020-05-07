@@ -1,2 +1,2 @@
 [$HOME/.config/vcsh/repo.d/bash.git]
-checkout = vcsh clone -b bash git@github.com:zubieta/dotfiles.git bash
+checkout = vcsh clone -b bash https://github.com/zubieta/dotfiles.git bash
