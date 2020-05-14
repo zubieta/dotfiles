@@ -1,12 +1,16 @@
+scriptencoding=utf-8
+" Command to show a mark when inside a vcsh repo
+let s:vcsh = '$([ -n "${VCSH_REPO_NAME+set}" ] && printf "λ[$VCSH_REPO_NAME]" )'
+
 " Command to return the right virtual/conda env if exists
-let s:venv = '$([ -n "${VIRTUAL_ENV+set}" ] && (_TMP="${VIRTUAL_ENV##*/}" && ([ -n "${PIPENV_ACTIVE+set}" ] && printf "(${_TMP%?????????})" || printf "(${_TMP})" )) || ([ -n "${CONDA_DEFAULT_ENV+set}" ] && printf "(${CONDA_DEFAULT_ENV})"))'
+let s:venv = '$([ -n "${VIRTUAL_ENV+set}" ] && (_TMP="${VIRTUAL_ENV##*/}" && ([ -n "${PIPENV_ACTIVE+set}" ] && printf "θ(${_TMP%?????????})" || printf "θ($_TMP)" )) || ([ -n "${CONDA_DEFAULT_ENV+set}" ] && printf "θ($CONDA_DEFAULT_ENV)"))'
 
 " Load the custom preset only after promptline plugin is sourced
 " so it works with optional packages
 augroup promptline
   autocmd!
   autocmd SourcePost */plugin/promptline.vim let g:promptline_preset = {
-        \'a' : [s:venv, promptline#slices#host({ 'only_if_ssh': 1 })],
+        \'a' : [s:vcsh, s:venv, promptline#slices#host({ 'only_if_ssh': 1 })],
         \'b' : [promptline#slices#user()],
         \'c' : [promptline#slices#cwd({'dir_limit': '${PROMPT_DIRTRIM:-2}'})],
         \'y' : [promptline#slices#git_status(), promptline#slices#vcs_branch()],
